@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   squares[currentIndex].classList.add('frog')
 
-  function moveFrog() {
+  function moveFrog(e) {
     squares[currentIndex].classList.remove('frog')
     switch(e.keyCode){
       case 37:
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   break
   case logLeft.classList.contains('l3'):
   logLeft.classList.remove('l3')
-  logLeft.classList.add('l1')
+  logLeft.classList.add('l4')
   break
   case logLeft.classList.contains('l4'):
   logLeft.classList.remove('l4')
@@ -136,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 function lose(){
-  if ((currentTime === 0) || (squares[currentIndex].classList.contains('c1')) || (squares[currentIndex].classList.contains('l5')) ||
+  if ((currentTime === 0) || (squares[currentIndex].classList.contains('c1'))
+   || (squares[currentIndex].classList.contains('l5')) ||
   (squares[currentIndex].classList.contains('l4'))){
     result.innerHTML = 'You lose!!!!!!!!'
     squares[currentIndex].classList.remove('frog')
