@@ -1,3 +1,6 @@
+body{
+  background-color: #FFB5C3;
+}
 .grid{
   border: 1px solid;
   display: flex;
