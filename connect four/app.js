@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else alert('Nooo!!!')
 
       }
-    })
+    })(i);}
 
 
   function checkBoard() {
@@ -42,7 +42,40 @@ document.addEventListener('DOMContentLoaded', () => {
       [14, 15, 16, 17],
       [15, 16, 17, 18],
       [16, 17, 18, 19],
-      [17, 18, 19, 20]
+      [17, 18, 19, 20],
+      [21,22,23,24],
+      [22,23,24,25],
+      [23,24,25,26],
+      [24,25,26,27],
+      [28,29,30,31],
+      [29,30,31,32],
+      [30,31,32,33],
+      [31,32,33,34],
+      [35,36,37,38],
+      [36,37,38,39],
+      [37,38,39,40],
+      [38,39,40,41],
+      [0,7,14,21],
+      [7,14,21,28],
+      [14,21,28,35],
+      [1,8,15,22],
+      [8,15,22,29],
+      [15,22,29,36],
+      [2,9,16,23],
+      [9,16,23,30],
+      [16,23,30,37],
+      [3,10,17,24],
+      [10,17,24,31],
+      [17,24,31,38],
+      [4,11,18,25],
+      [11,18,25,32],
+      [18,25,32,39],
+      [5,12,19,26],
+      [12,19,26,33],
+      [19,26,33,40],
+      [6,13,20,27],
+      [13,20,27,34],
+      [20,27,34,41]
     ]
     for (let y = 0; y < winArrays.length; y++) {
       const sq1 = square[winArrays[y][0]]
@@ -53,19 +86,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if(sq1.classList.contains('plone') &&
       sq2.classList.contains('plone')
       &&sq3.classList.contains('plone') &&
-    sq4.classList.contains('plone') &&){
+    sq4.classList.contains('plone') ){
       result.innerHTML = 'Player one wins!!'
     }
     else if (sq1.classList.contains('pltwo') &&
     sq2.classList.contains('pltwo')
     &&sq3.classList.contains('pltwo') &&
-  sq4.classList.contains('pltwo') &&) {
+  sq4.classList.contains('pltwo') ) {
     result.innerHTML = 'Player two wins!!'
 
     }
     }
 
-  }(i)
+  }
   //add an event listener to each square that will call the checkBoard function on click
 square.forEach(squu => squu.addEventListener('click',checkBoard))
 
