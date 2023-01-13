@@ -1,7 +1,11 @@
-document.addEventListener(DOMContentLoaded, () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   const squares = document.querySelectorAll('.grid div')
   const resultDisplay = document.querySelector('#result')
+  const warningDisplay = document.querySelector('#warning')
+  const rr = document.querySelector('.right')
+  const ll = document.querySelector('.left')
+  const uu = document.querySelector('.up')
   let width = 15
   let currentShooterIndex = 202
   let currentInvaderIndex = 0
@@ -17,6 +21,20 @@ document.addEventListener(DOMContentLoaded, () => {
 
   alienInvaders.forEach(invader => squares[currentInvaderIndex + invader].classList.add('invader'))
   squares[currentShooterIndex].classList.add('shooter')
+ll.addEventListener('click',shleft)
+rr.addEventListener('click',shright)
+uu.addEventListener('click',shoot)
+
+function shleft(){
+  squares[currentShooterIndex].classList.remove('shooter')
+  currentShooterIndex -=1 //move left
+  squares[currentShooterIndex].classList.add('shooter')
+}
+function shright(){
+  squares[currentShooterIndex].classList.remove('shooter')
+  currentShooterIndex += 1
+  squares[currentShooterIndex].classList.add('shooter')
+}
 
   function moveShooter(e) {
     squares[currentShooterIndex].classList.remove('shooter')
@@ -33,7 +51,7 @@ document.addEventListener(DOMContentLoaded, () => {
   document.addEventListener('keydown', moveShooter)
 
   function moveInvaders() {
-    const leftEdge = alienInvaders[0] % width === = 0
+    const leftEdge = alienInvaders[0] % width === 0
     const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width - 1
 
     if ((leftEdge && direction === -1) || (rightEdge && direction === 1)) {
@@ -55,25 +73,25 @@ document.addEventListener(DOMContentLoaded, () => {
     }
 
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-      resultDisplay.textContent = 'Game Over'
+      warningDisplay.innerHTML = 'Game Over'
       squares[currentShooterIndex].classList.add('boom')
       clearInterval(invaderId)
     }
     for (let i = 0; i <= alienInvaders.length - 1; i++) {
       if (alienInvaders[i] > (squares.length - (width - 1))) {
-        resultDisplay.textContent = 'Game Over'
+        warningDisplay.innerHTML = 'Game Over'
         clearInterval(invaderId)
 
       }
     }
     if(alienInvadersTakenDown.length === alienInvaders.length){
-      resultDisplay.textContent = "You Win!!!"
+      warningDisplay.innerHTML = "You Win!!!"
       clearInterval(invaderId)
     }
   }
   invaderId = setInterval(moveInvaders, 500)
 
-  function shoot(e) {
+  function shoot() {
     let laserId
     let currentLaserIndex = currentShooterIndex
 
@@ -92,7 +110,7 @@ document.addEventListener(DOMContentLoaded, () => {
         const alienTakenDown = alienInvaders.indexOf(currentLaserIndex)
         alienInvadersTakenDown.push(alienTakenDown)
         result++
-        resultDisplay.textContent = result
+        resultDisplay.innerHTML = result
       }
 
       if(currentLaserIndex < width){
@@ -102,12 +120,10 @@ document.addEventListener(DOMContentLoaded, () => {
       }
     }
 
-  document.addEventListener('keyup', e =>{
-  if (e.keyCode === 32){
         laserId = setInterval(moveLaser, 100)
-      }
-    })
-
-  document.addEventListener('keyup',shoot)
+}
+  document.addEventListener('keydown',e=>{
+    if(e.keyCode===32){shoot();}
+  })
 
 })
