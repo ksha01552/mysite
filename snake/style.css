@@ -1,17 +1,17 @@
-body{
-  justify-content: center;
-  align-content: center;
+ body{
+   text-align: center;
   }
 
 .grid{
-  width: 200px;
-  height: 200px;
-  display: flex;
+  width: 440px;
+  height: 440px;
+  display: inline-flex;
   flex-wrap: wrap;
   border-style: solid;
 }
 
 .grid div{
+  border:1px solid black;
   width: 20px;
   height: 20px;
 }
@@ -26,4 +26,30 @@ button{
 }
 .apple{
   background-color: purple;
+}
+.g{
+  width: 180px;
+  height: 180px;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.g div{
+  width: 60px;
+  height: 60px;
+}
+.aup{
+  background-image:url('../images/up.svg');
+  background-size: cover;
+}
+.adown{
+  background-image:url('../images/down.svg');
+background-size: cover;
+}
+.aleft{
+  background-image:url('../images/left.svg');
+background-size: cover;
+}
+.aright{
+  background-image:url('../images/right.svg');
+background-size: cover;
 }
