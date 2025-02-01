@@ -1,0 +1,30 @@
+body{
+  text-align: center;
+  align-content: center;
+  background-image: url('back.jpg');
+  background-size: 100% 60rem;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+.square{
+  width: 200px;
+  height: 200px;
+  border:1px solid black;
+}
+.grid{
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 606px;
+  height: 606px;
+}
+.mole{
+  background-image: url('mole.png');
+  background-size: cover;
+}

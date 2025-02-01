@@ -1,0 +1,26 @@
+body{
+  background-color: #FFB5C3;
+}
+.grid{
+  border: 1px solid;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 350px;
+  background-color: yellow;
+}
+.grid div{
+  height: 50px;
+  width: 50px;
+}
+.plone{
+  background-color: red;
+  border-radius: 20px;
+}
+.pltwo{
+  background-color: blue;
+  border-radius: 20px;
+}
+.cl{
+  background-color: black;
+}

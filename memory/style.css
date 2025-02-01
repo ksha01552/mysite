@@ -1,0 +1,13 @@
+body{
+  background-color: yellow;
+text-align: center;
+  }
+.grid {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 400px;
+}
+h1{
+  text-align: center;
+}
